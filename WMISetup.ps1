@@ -1,3 +1,9 @@
+Write-Host "Installing WMI Exporter"
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+choco install chocolatey-c​ore.extension
+choco install prometheus-wmi-exporter.install --version 0.10.2 -y
+Write-Host "Installed WMI Exporter"
+
 $output = "c:\Metrics\wmiconfigstate.prom"
 $stateversion  = "1.0.1"
 $serviceName = "wmi_exporter"
