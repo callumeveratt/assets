@@ -71,3 +71,9 @@ function Disable-TLS() {
     Set-RegistryKey -keyName "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client" -valueName "DisabledByDefault" -value "1" -kind "dword"
     Write-Host "Completed Disable TLS 1.1"
 }
+
+Set-DotNetFrameworkDefaultTLSVersion
+Disable-WindowsFirewall
+Disable-IEesc
+Disable-SSLCipher
+Disable-TLS
